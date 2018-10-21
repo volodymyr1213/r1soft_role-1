@@ -1,7 +1,13 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+This role is used to install r1soft agent on Any type of *nix operating system. 
+
+Before you run the playbook, please change the domain/ip  of the r1soft server under /r1soft/vars/main.yml 
+
+Example: 
+r1softserver: domain
+
 
 Requirements
 ------------
@@ -23,9 +29,12 @@ Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+--- 
+- name: Give a name here 
+  hosts: all 
+  roles: 
+    - r1soft_role 
+ 
 
 License
 -------
