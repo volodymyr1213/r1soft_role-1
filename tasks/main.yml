@@ -5,7 +5,12 @@
   template:
     src: ../templates/r1soft.repo
     dest: /etc/yum.repos.d/r1soft.repo
-
+ 
+- name: Copy repo to RedHat Family 
+  when: ansible_os_family == "RedHat" 
+  package: 
+    name: bind-utils 
+  
 - name: Create repo on Ubuntu
   when: ansible_os_family == "Debian" 
   shell: "{{ item }}"
